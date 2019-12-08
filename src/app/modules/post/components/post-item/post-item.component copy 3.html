@@ -1,0 +1,11 @@
+<div>
+  <!-- <h4><a title="{{ entity.title }}">{{ entity.title }}</a></h4> -->
+  <!-- <h4><a [title]="entity.title">{{ entity.title }}</a></h4> -->
+  <h4><a 
+    [routerLink]="['/posts',entity.id]"
+    [title]="entity.title" [textContent]="entity.title"></a></h4>
+  <p *ngIf="entity.body">{{ entity.body }}</p>
+  <p>
+    <button (click)="onClick()">Remove</button>
+  </p>
+</div>
