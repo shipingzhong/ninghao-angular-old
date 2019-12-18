@@ -1,0 +1,23 @@
+.demo{
+    display: flex;
+    height: 100vh;
+}
+.sidebar{
+    border-right: 1px solid #eee;
+    margin-left: -32px;
+    margin-top: -32px;
+}
+
+.sidebar a{
+    display: block;
+    padding: 8px 24px;
+    color: rgba(0,0,0,0.7);
+}
+.sidebar a.active{
+    background: #f8f8f8;
+    color: #000000;
+}
+.content{
+    padding-left: 32px;
+    flex-grow: 2;/* 目的是为了让这个内容区域占满剩余的所有空间 */
+}

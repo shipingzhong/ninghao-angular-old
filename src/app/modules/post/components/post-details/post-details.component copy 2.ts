@@ -18,16 +18,13 @@ export class PostDetailsComponent implements OnInit {
 
   
   ngOnInit() {
-    /* this.route.paramMap.subscribe(
+    this.route.paramMap.subscribe(
       params=>{
         const postId = +params.get('id');
         console.log(postId);
         this.entity = this.postService.show(postId);
       }
-    ) */
-    this.route.data.subscribe((data:{entity:Post})=>{
-      this.entity = data.entity;
-    });
+    )
   }
   gotoPosts(entity: Post) {
     this.router.navigate(['/posts', { id: entity.id }]);
