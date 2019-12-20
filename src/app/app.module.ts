@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 import { AppComponent } from './app.component';
 import { PostModule } from './modules/post/post.module';
@@ -19,6 +22,7 @@ import { MessageBoxComponent } from './core/components/message-box/message-box.c
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     PostModule,
     UserModule,
     // DemoModule,

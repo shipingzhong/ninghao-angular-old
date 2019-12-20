@@ -4,9 +4,10 @@ import { RegisterComponent } from './components/register/register.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserRoutingModule } from './user-routing.module';
+import { MyListComponent } from './components/my-list/my-list.component';
 
 @NgModule({
-  declarations: [RegisterComponent],
+  declarations: [RegisterComponent, MyListComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

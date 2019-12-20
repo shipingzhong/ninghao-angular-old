@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Post } from './models/post.model';
 import { PostService } from './service/post.service';
 import { ActivatedRoute } from '@angular/router';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-post',
@@ -15,6 +14,7 @@ export class PostComponent implements OnInit {
   selectedId: number;
 
   constructor(private postService: PostService, private route: ActivatedRoute) {
+    this.entities = this.postService.index();
    }
 
   ngOnInit() {
@@ -22,19 +22,6 @@ export class PostComponent implements OnInit {
       // 加号 表示把字符串转成数字类型
       this.selectedId = +params.get('id');
     });
-
-    const entities$ = this.postService.index();
-
-    const observer = {
-      next:(data:Post[])=>{
-        this.entities =  data;
-      },
-      error:(error:HttpErrorResponse)=>{
-        console.log(error);
-      }
-    }
-    
-    entities$.subscribe(observer);
   }
 
   removeItem(item:Post){
@@ -43,4 +30,5 @@ export class PostComponent implements OnInit {
       return entity.id !== item.id;
     })
   }
+
 }
